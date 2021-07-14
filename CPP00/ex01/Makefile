@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+         #
+#    By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 15:26:08 by amarcell          #+#    #+#              #
-#    Updated: 2021/07/13 17:36:19 by amarcell         ###   ########.fr        #
+#    Updated: 2021/07/14 02:22:27 by alexmarcell      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ OBJS_DIR	=		objs
 
 HPPS		=		bookphone.hpp
 
-SRCS		= 		contact.cpp
+SRCS		= 		contact.cpp		bookphone.cpp	main.cpp
 					
 				
 #---------------------COMPILER---------------------#

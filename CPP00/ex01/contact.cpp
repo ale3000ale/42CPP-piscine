@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 17:23:25 by amarcell          #+#    #+#             */
-/*   Updated: 2021/07/13 19:14:28 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/07/14 02:40:48 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bookphone.hpp"
 
-Contact::Contact(int id)
+Contact::Contact(void)
 {
-	_id = id;
+	_id = 0;
 	return;
 }
 
@@ -62,9 +62,9 @@ static std::string	truncate(std::string str)
 {
 	std::string	temp;
 
+	temp = str.substr(0,10);
 	if (str.length() > 10)
 	{
-		temp = str.substr(0,10);
 		temp[9] = '.';
 	}
 	return (temp);
@@ -77,4 +77,9 @@ void	Contact::print_essensial(void)
 	std::cout << std::setw(10) << truncate(_first_name) << "|";
 	std::cout << std::setw(10) << truncate(_last_name) << "|";
 	std::cout << std::setw(10) << truncate(_nickname) << std::endl;
+}
+
+void	Contact::set_id(int id)
+{
+	_id = id;
 }

@@ -6,7 +6,7 @@
 #    By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 15:26:08 by amarcell          #+#    #+#              #
-#    Updated: 2021/07/13 15:33:37 by amarcell         ###   ########.fr        #
+#    Updated: 2021/07/19 17:52:27 by amarcell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,14 +47,14 @@ UWHITE		=		"\033[4;37m"       # White
 
 OBJS_DIR	=		objs
 
-HPPS		=
+HPPS		=		Account.hpp
 
-SRCS		= 		megaphone.cpp
+SRCS		= 		tests.cpp
 					
 				
 #---------------------COMPILER---------------------#
 
-NAME		=		megaphone
+NAME		=		AO
 
 CPP 		= 		@ clang++
 
@@ -71,7 +71,7 @@ $(OBJS_DIR)/%.o :	./%.cpp
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			@ $(CPP) $(OBJS) $(HPPS) -o $@
+			@ $(CPP) $(OBJS) -o $@
 			@ echo $(BGREEN) "$(NAME) compiled successfully ✅" $(COLOR_OFF)
 
 clean:

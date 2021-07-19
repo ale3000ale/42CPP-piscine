@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bookphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 01:45:30 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/07/14 03:10:58 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/07/19 17:35:00 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,28 @@ void	StepPhoneBook::find(void)
 	int	i;
 	std::string inutile;
 
+	std::cout << std::setw(10) << "----ID----" << "|";
+	std::cout << std::setw(10) << "First Name" << "|";
+	std::cout << std::setw(10) << "Last  Name" << "|";
+	std::cout << std::setw(10) << "-Nickname-" << std::endl;
 	i = 0;
 	while(i < _ncontacts)
 		_contacts[i++].print_essensial();
+	std::cout << std::setw(10) << "-------------------------------------------" << "" \
+		<< std::endl;
+	if (!_ncontacts)
+	{
+		std::cout << "The Phonebook is empty" << std::endl;
+		return ;
+	}
 	i = 0;
-	while (!i)
+	while (std::cin.fail() || 1 > i || i > _ncontacts)
 	{
 		std::cout << "Chose an ID: ";
 		std::cin >> i;
-		if (1 > i || i > _ncontacts)
-			i = 0;
+		std::cin.clear();
+		std::cin.ignore(256,'\n');
 	}
-	
-	std::cout << "\e[1;1H\e[2J" << std::endl;
-	_contacts[i - 1].print_contact();
+	std::cout << "\e[1;1H\e[2J";
+	_contacts[i - 1].print_contact();	
 }

@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   bookphone.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 16:10:10 by amarcell          #+#    #+#             */
-/*   Updated: 2021/07/14 02:43:11 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/07/19 17:49:57 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BOOKPHONE_HPP
-# define BOOKPHONE_HPP
+#ifndef BOOKPHONE_H__
+# define BOOKPHONE_H__
 
 #include <iostream>
 #include <string>

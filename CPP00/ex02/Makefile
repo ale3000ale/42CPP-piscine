@@ -6,7 +6,7 @@
 #    By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 15:26:08 by amarcell          #+#    #+#              #
-#    Updated: 2021/07/19 17:52:27 by amarcell         ###   ########.fr        #
+#    Updated: 2021/07/27 17:19:45 by amarcell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,9 +49,8 @@ OBJS_DIR	=		objs
 
 HPPS		=		Account.hpp
 
-SRCS		= 		tests.cpp
-					
-				
+SRCS		= 		Account.cpp	tests.cpp
+
 #---------------------COMPILER---------------------#
 
 NAME		=		AO

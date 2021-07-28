@@ -6,7 +6,7 @@
 /*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 00:32:45 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/07/28 02:37:44 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/07/28 03:01:53 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ private:
 	std::string	_name;
 
 public:
-
+	Zombie(void);
 	Zombie(std::string name);
 	~Zombie(void);
 	
 	void	announce( void );
+	void	setName(std::string name);
 };
 
 Zombie*	zombieHorde( int N, std::string name );

@@ -6,14 +6,22 @@
 /*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 00:41:18 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/07/28 02:37:49 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/07/28 03:02:04 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Zombie.hpp"
 
+Zombie::Zombie(void)
+{}
+
 Zombie::Zombie(std::string name): _name(name)
 {}
+
+void	Zombie::setName(std::string name)
+{
+	_name = name;
+}
 
 Zombie::~Zombie(void)
 {

@@ -6,7 +6,7 @@
 /*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 00:32:37 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/07/28 02:43:33 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/07/28 03:00:50 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,4 @@ int	main(void)
 
 	for (int i = 0; i < N; i++)
 		horde[i].announce();
-	//delete [] horde;
 }

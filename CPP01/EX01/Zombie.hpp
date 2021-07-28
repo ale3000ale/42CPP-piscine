@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/28 00:41:18 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/07/28 01:43:21 by alexmarcell      ###   ########.fr       */
+/*   Created: 2021/07/28 00:32:45 by alexmarcell       #+#    #+#             */
+/*   Updated: 2021/07/28 02:37:44 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Zombie.hpp"
+#ifndef ZOMBIE_H__
 
-Zombie::Zombie(std::string name): _name(name)
-{}
+#include <iostream>
+#include <iomanip>
 
-Zombie::~Zombie(void)
+class Zombie
 {
-	std::cout << _name << " PLZ SOME BRainnn..... KABOOM" << std::endl;
-}
 
-void	Zombie::announce(void)
-{
-	std::cout << _name << " BraiiiiiiinnnzzzZ..." << std::endl;
-}
+private:
+
+	std::string	_name;
+
+public:
+
+	Zombie(std::string name);
+	~Zombie(void);
+	
+	void	announce( void );
+};
+
+Zombie*	zombieHorde( int N, std::string name );
+#endif

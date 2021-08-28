@@ -5,19 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/28 00:32:37 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/12 18:14:16 by alexmarcell      ###   ########.fr       */
+/*   Created: 2021/08/22 17:59:51 by alexmarcell       #+#    #+#             */
+/*   Updated: 2021/08/27 18:07:59 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+#include "Fixed.hpp"
 
-int	main(void)
-{	
-	int		N = 3;
-	Zombie	*horde = zombieHorde(N, "Genoveffo");
+int main( void ) 
+{
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-	for (int i = 0; i < N; i++)
-		horde[i].announce();
-	delete [] horde;
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	return 0; 
 }

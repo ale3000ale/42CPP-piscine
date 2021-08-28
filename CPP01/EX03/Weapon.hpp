@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/28 00:32:37 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/12 18:14:16 by alexmarcell      ###   ########.fr       */
+/*   Created: 2021/08/12 18:51:17 by alexmarcell       #+#    #+#             */
+/*   Updated: 2021/08/18 01:04:44 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int	main(void)
-{	
-	int		N = 3;
-	Zombie	*horde = zombieHorde(N, "Genoveffo");
+#include <iostream>
+#include <iomanip>
 
-	for (int i = 0; i < N; i++)
-		horde[i].announce();
-	delete [] horde;
-}
+class Weapon
+{
+private:
+	std::string		_type;
+	
+public:
+
+	Weapon(std::string type);
+	Weapon();
+	~Weapon();
+	std::string 	getType(void);
+	void			setType(std::string tp);
+};
+
+#endif

@@ -5,19 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/28 00:32:37 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/12 18:14:16 by alexmarcell      ###   ########.fr       */
+/*   Created: 2021/08/22 17:59:51 by alexmarcell       #+#    #+#             */
+/*   Updated: 2021/08/24 16:32:54 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+#include "Fixed.hpp"
 
-int	main(void)
-{	
-	int		N = 3;
-	Zombie	*horde = zombieHorde(N, "Genoveffo");
 
-	for (int i = 0; i < N; i++)
-		horde[i].announce();
-	delete [] horde;
+int main( void ) 
+{
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
 }

@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/28 00:32:37 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/12 18:14:16 by alexmarcell      ###   ########.fr       */
+/*   Created: 2021/08/19 16:50:47 by alexmarcell       #+#    #+#             */
+/*   Updated: 2021/08/21 16:09:09 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef KAREN_H__
+# define KAREN_H__
 
-int	main(void)
-{	
-	int		N = 3;
-	Zombie	*horde = zombieHorde(N, "Genoveffo");
+#include <iostream>
+#include <iomanip>
 
-	for (int i = 0; i < N; i++)
-		horde[i].announce();
-	delete [] horde;
-}
+class Karen
+{
+private:
+	void	debug();
+	void	error();
+	void	info();
+	void	warning();
+
+public:
+	void complain( std::string level );
+};
+
+#endif

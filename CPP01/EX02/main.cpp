@@ -5,19 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/28 00:32:37 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/12 18:14:16 by alexmarcell      ###   ########.fr       */
+/*   Created: 2021/08/12 18:16:39 by alexmarcell       #+#    #+#             */
+/*   Updated: 2021/08/12 18:40:10 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+#include <iomanip>
 
-int	main(void)
-{	
-	int		N = 3;
-	Zombie	*horde = zombieHorde(N, "Genoveffo");
-
-	for (int i = 0; i < N; i++)
-		horde[i].announce();
-	delete [] horde;
+int main(void)
+{
+	std::string	myStr = "HI THIS IS BRAIN";
+	std::string	*stringPTR = &myStr;
+	std::string stringREF = myStr;
+	std::cout << "MY:  " << &myStr << "\nPTR: " << stringPTR 
+		<< "\nREF: " << &stringREF << std::endl;
+	std::cout << "MY:  -|" << myStr << "|-\nPTR: -|" << *stringPTR 
+		<< "|-\nREF: -|" << stringREF << "|-" << std::endl;	
 }

@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/30 17:49:57 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/31 13:06:59 by amarcell         ###   ########.fr       */
+/*   Created: 2021/08/31 13:45:19 by amarcell          #+#    #+#             */
+/*   Updated: 2021/08/31 14:02:02 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#include "Cat.hpp"
 
-int main(void)
+Cat::Cat() : Animal("Cat")
 {
-	DiamondTrap bot1("Steve");
+	std::cout << "A Cat was created [" << type << "]" << std::endl;
+}
+Cat::~Cat()
+{
+	std::cout << "A Cat was destroyed [" << type << "]" << std::endl;
+}
 
-	bot1.attack("BoB");
-	bot1.takeDamage(5);
-	bot1.beRepaired(10);
-	bot1.highFivesGuys();
-	bot1.guardGate();
-	bot1.whoAmI();
+void 	Cat::makeSound(void) const
+{
+	std::cout << "[" << type << "] says MIHAO!" << std::endl;
 }

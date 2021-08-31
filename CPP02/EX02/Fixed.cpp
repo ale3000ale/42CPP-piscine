@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 18:33:42 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/27 16:14:10 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/08/31 13:35:11 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

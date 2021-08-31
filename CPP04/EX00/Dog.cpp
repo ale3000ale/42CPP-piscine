@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/30 17:49:57 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/31 13:06:59 by amarcell         ###   ########.fr       */
+/*   Created: 2021/08/31 13:35:06 by amarcell          #+#    #+#             */
+/*   Updated: 2021/08/31 14:02:17 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#include "Dog.hpp"
 
-int main(void)
+Dog::Dog() : Animal("Dog")
 {
-	DiamondTrap bot1("Steve");
+	std::cout << "A Dog was created [" << type << "]" << std::endl;
+}
 
-	bot1.attack("BoB");
-	bot1.takeDamage(5);
-	bot1.beRepaired(10);
-	bot1.highFivesGuys();
-	bot1.guardGate();
-	bot1.whoAmI();
+Dog::~Dog()
+{
+	std::cout << "A Dog was destroyed [" << type << "]" << std::endl;
+}
+
+void 	Dog::makeSound(void) const
+{
+	std::cout << "[" << type << "] says BARK!" << std::endl;
 }

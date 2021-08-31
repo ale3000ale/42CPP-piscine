@@ -5,21 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/30 17:49:57 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/31 13:06:59 by amarcell         ###   ########.fr       */
+/*   Created: 2021/08/31 13:53:04 by amarcell          #+#    #+#             */
+/*   Updated: 2021/08/31 15:34:09 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-int main(void)
+int main() 
 {
-	DiamondTrap bot1("Steve");
-
-	bot1.attack("BoB");
-	bot1.takeDamage(5);
-	bot1.beRepaired(10);
-	bot1.highFivesGuys();
-	bot1.guardGate();
-	bot1.whoAmI();
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+	const WrongAnimal* x = new WrongCat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	std::cout << x->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	x->makeSound();
+	meta->makeSound();
+	delete meta;
+	delete j;
+	delete i;
+	delete x;
 }

@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/30 17:49:57 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/31 13:06:59 by amarcell         ###   ########.fr       */
+/*   Created: 2021/08/31 13:45:16 by amarcell          #+#    #+#             */
+/*   Updated: 2021/08/31 18:35:13 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef CAT_H__
+#define CAT_H__
 
-int main(void)
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Cat : public Animal
 {
-	DiamondTrap bot1("Steve");
+private:
+	Brain	*brain;
+	
+public:
+	Cat();
+	Cat(Cat const &cpy);
+	~Cat();
+	
+	Cat & operator=(const Cat &cpy);
+	void makeSound(void) const;
+	void setIdea(const int i, const std::string tk);
+	void printIdeas(void);
+};
 
-	bot1.attack("BoB");
-	bot1.takeDamage(5);
-	bot1.beRepaired(10);
-	bot1.highFivesGuys();
-	bot1.guardGate();
-	bot1.whoAmI();
-}
+
+
+#endif

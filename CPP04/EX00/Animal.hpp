@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/30 17:49:57 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/31 13:06:59 by amarcell         ###   ########.fr       */
+/*   Created: 2021/08/31 13:16:28 by amarcell          #+#    #+#             */
+/*   Updated: 2021/08/31 15:33:40 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef ANIMAL_H__
+#define ANIMAL_H__
 
-int main(void)
+#include <iostream>
+#include <iomanip>
+
+class Animal
 {
-	DiamondTrap bot1("Steve");
+private:
 
-	bot1.attack("BoB");
-	bot1.takeDamage(5);
-	bot1.beRepaired(10);
-	bot1.highFivesGuys();
-	bot1.guardGate();
-	bot1.whoAmI();
-}
+protected:
+	std::string type;
+
+
+public:
+	Animal();
+	Animal(std::string _type);
+	Animal(const Animal &cpy);
+	virtual ~Animal();
+
+	Animal 				&operator = (const Animal &cpy);
+	virtual void 			makeSound(void) const;
+	std::string 	getType(void) const;
+};
+
+
+
+#endif

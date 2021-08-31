@@ -6,7 +6,7 @@
 #    By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 15:26:08 by amarcell          #+#    #+#              #
-#    Updated: 2021/08/31 13:21:03 by amarcell         ###   ########.fr        #
+#    Updated: 2021/08/31 15:40:17 by amarcell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,21 +49,21 @@ OBJS_DIR	=		objs
 
 HPPS		=		
 
-SRCS		= 		ClapTrap.cpp  main.cpp FragTrap.cpp
+SRCS		= 		main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 					
 				
 #---------------------COMPILER---------------------#
 
-NAME		=		FragTrap
+NAME		=		Animals
 
 CPP 		= 		@ clang++
 
-CFLAGS		=		-Wall -Wextra -Werror 
+CFLAGS		=		-Wall -Wextra -Werror
 
 OBJS		=		$(patsubst %.cpp, ${OBJS_DIR}/%.o, ${SRCS})
 
 $(OBJS_DIR)/%.o :	./%.cpp
-			@ mkdir -p $(OBJS_DIR) 
+			@ mkdir -p $(OBJS_DIR)
 			$(CPP) $(CFLAGS) -c $< -o $@
 
 #---------------------COMMANDS---------------------#

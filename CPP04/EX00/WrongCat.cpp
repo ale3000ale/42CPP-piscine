@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/30 17:49:57 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/31 13:06:59 by amarcell         ###   ########.fr       */
+/*   Created: 2021/08/31 15:21:00 by amarcell          #+#    #+#             */
+/*   Updated: 2021/08/31 15:34:46 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#include "WrongCat.hpp"
 
-int main(void)
+WrongCat::WrongCat() : WrongAnimal("Cat")
 {
-	DiamondTrap bot1("Steve");
+	std::cout << "A WrongCat was created [" << type << "]" << std::endl;
+}
+WrongCat::~WrongCat()
+{
+	std::cout << "A WrongCat was destroyed [" << type << "]" << std::endl;
+}
 
-	bot1.attack("BoB");
-	bot1.takeDamage(5);
-	bot1.beRepaired(10);
-	bot1.highFivesGuys();
-	bot1.guardGate();
-	bot1.whoAmI();
+void 	WrongCat::makeSound(void) const
+{
+	std::cout << " WrongCat [" << type << "] says MIHAO!" << std::endl;
 }

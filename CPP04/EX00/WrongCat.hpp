@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/30 17:49:57 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/31 13:06:59 by amarcell         ###   ########.fr       */
+/*   Created: 2021/08/31 15:13:20 by amarcell          #+#    #+#             */
+/*   Updated: 2021/08/31 15:35:02 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef WRONGCAT_H__
+#define WRONGCAT_H__
 
-int main(void)
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-	DiamondTrap bot1("Steve");
+private:
+	
+public:
+	WrongCat();
+	~WrongCat();
 
-	bot1.attack("BoB");
-	bot1.takeDamage(5);
-	bot1.beRepaired(10);
-	bot1.highFivesGuys();
-	bot1.guardGate();
-	bot1.whoAmI();
-}
+	void makeSound(void) const;
+};
+
+
+
+#endif

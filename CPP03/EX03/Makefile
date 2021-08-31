@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+         #
+#    By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 15:26:08 by amarcell          #+#    #+#              #
-#    Updated: 2021/08/31 10:53:36 by alexmarcell      ###   ########.fr        #
+#    Updated: 2021/08/31 12:54:35 by amarcell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ OBJS_DIR	=		objs
 
 HPPS		=		
 
-SRCS		= 		ClapTrap.cpp  main.cpp FragTrap.cpp
+SRCS		= 		ClapTrap.cpp  main.cpp FragTrap.cpp DiamondTrap.cpp ScavTrap.cpp
 					
 				
 #---------------------COMPILER---------------------#
@@ -58,7 +58,7 @@ NAME		=		DiamondTrap
 
 CPP 		= 		@ clang++
 
-CFLAGS		=		-Wall -Wextra -Werror 
+CFLAGS		=		-Wall -Wextra -Werror -Wshadow -Wno-shadow
 
 OBJS		=		$(patsubst %.cpp, ${OBJS_DIR}/%.o, ${SRCS})
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 10:53:08 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/31 11:04:26 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/08/31 12:54:59 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,18 @@
 		energy = ScavTrap::energy;
 		dmg = ScavTrap::att;
 		att = FragTrap::att;
-		std::cout << "Flagtrap[" << name <<"] join the battle" << std::endl
+		std::cout << "DiamondTrap[" << name <<"] join the battle" << std::endl
 		<< "HP: " << hp << std::endl << "Energy: " << energy << std::endl
 		<< "Att dmg: " << att << std::endl << "Att: " << dmg << std::endl;
 		
 	}
 	
-	DiamondTrap::~DiamondTrap(void);
+	DiamondTrap::~DiamondTrap(void)
+	{
+		std::cout	<< "DiamondTrap[" << name <<"] was destroyed" << std::endl;
+	}
 	
-	void	DiamondTrap::whoAmI(void);
+	void	DiamondTrap::whoAmI(void)
+	{
+		std::cout	<< "I am " << name <<" we are" << ClapTrap::name << std::endl;
+	}

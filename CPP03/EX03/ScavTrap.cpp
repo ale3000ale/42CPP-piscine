@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 18:06:06 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/30 18:28:13 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/08/31 12:47:48 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,17 @@
 		<< "Att: " << att << std::endl;
 	}
 	
+	ScavTrap::ScavTrap() : ClapTrap("NONE")
+	{
+		hp = 100;
+		energy = 50;
+		att = 20;
+		
+		std::cout << "ScavTrap[" << name <<"] join the battle" << std::endl
+		<< "HP: " << hp << std::endl << "Energy: " << energy << std::endl
+		<< "Att: " << att << std::endl;
+	}
+
 	ScavTrap::~ScavTrap()
 	{
 		std::cout	<< "ScavTrap[" << name <<"] was destroyed" << std::endl;

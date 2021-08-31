@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 18:16:40 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/30 18:27:07 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/08/31 12:48:02 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 #define SCAVTRAP_H__
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 
 private:
 	/* data */
 public:
 
+	ScavTrap();
 	ScavTrap(std::string _name);
 	~ScavTrap();
 

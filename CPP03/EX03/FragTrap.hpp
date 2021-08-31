@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 18:36:39 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/30 18:41:31 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/08/31 12:46:18 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #define FRAGTRAP_H__
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 
 private:
 	
 public:
-
+	FragTrap();
 	FragTrap(std::string _name);
 	~FragTrap();
 

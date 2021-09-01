@@ -6,7 +6,7 @@
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 13:16:30 by amarcell          #+#    #+#             */
-/*   Updated: 2021/09/01 14:30:16 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/09/01 14:33:28 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,6 @@ Animal 	&Animal::operator=(const Animal &cpy)
 	return *this;
 }
 
-void 	Animal::makeSound(void) const
-{
-	std::cout << "[" << type << "] says ROAR!" << std::endl;
-}
 
 std::string Animal::getType(void) const
 {

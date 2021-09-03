@@ -6,13 +6,14 @@
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 14:57:31 by amarcell          #+#    #+#             */
-/*   Updated: 2021/09/01 17:01:06 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/09/03 14:47:20 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-AMateria::AMateria()
+AMateria::AMateria()  : m_type("None")
 {
 }
 

@@ -6,39 +6,42 @@
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 17:32:23 by amarcell          #+#    #+#             */
-/*   Updated: 2021/09/01 18:58:56 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/09/03 14:50:26 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Character.hpp"
 
-	Character() : name("None"), inv(new AMateria*[SLOTS])
+	Character::Character() : name("None"), inv(new AMateria*[SLOTS])
 	{
-		for(int i = 0; i < SLOTS ; i++)
+		for(int i = 0;i < SLOTS;i++)
 			inv[i] = NULL;
 	}
 	
-	Character(const Character &cpy): inv(new AMateria*[SLOTS])
+	Character::Character(const Character &cpy): inv(new AMateria*[SLOTS])
 	{
 		*this = cpy;
 	}
 
-	Character(std::string const _name): name(_name), inv(new AMateria*[SLOTS])
+	Character::Character(std::string const _name): name(_name), inv(new AMateria*[SLOTS])
 	{
 		for(int i = 0; i < SLOTS ; i++)
 			inv[i] = NULL;
 	}
 	
-	~Character()
+	Character::~Character()
 	{
 		for(int i = 0; i < SLOTS ; i++)
-			delete inv[i];
+		{
+			if (inv[i])
+				delete inv[i];
+		}
 		delete [] inv;
 	}
 	
-	Character &	Character::operator=(Character const & cpy)
+	Character &	Character::Character::operator=(Character const & cpy)
 	{
-	if ( this != &rhs )
+	if ( this != &cpy)
 	{
 		name = cpy.getName();
 		for(int i = 0; i < SLOTS ; i++)
@@ -51,15 +54,13 @@
 	return *this;
 	}
 
-	std::string const & getName() const
+	std::string const & Character::getName() const
 	{
 		return name;
 	}
 	
-	void equip(AMateria* m)
+	void Character::equip(AMateria* m)
 	{
-		size_t	i = 0;
-
 		for(int i = 0; i < SLOTS ; i++)
 		{
 			if (!inv[i])
@@ -70,14 +71,14 @@
 		}
 	}
 
-	void unequip(int idx)
+	void Character::unequip(int idx)
 	{
-		if (idx < INV_SIZE && inv[idx])
+		if (idx < SLOTS && inv[idx])
 			inv[idx] = NULL;
 	}
-	void use(int idx, ICharacter& target)
+	void Character::use(int idx, ICharacter& target)
 	{
-		if (idx < INV_SIZE && inv[idx])
+		if (idx < SLOTS && inv[idx])
 			inv[idx]->use(target);
 	}
 	

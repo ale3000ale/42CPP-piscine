@@ -45,7 +45,6 @@ UCYAN		=		"\033[4;36m"        # Cyan
 UWHITE		=		"\033[4;37m"       # White
 
 #---------------------SRCS---------------------#
-
 #	use the NAME of one color in the COLOR section above --> $(COLOR NAME)
 
 DEBUG_COLOR	=		$(CYAN)
@@ -57,15 +56,15 @@ OBJS_DIR	=		objs
 
 OBJS_DEBUG_DIR	=	objs_debug
 
-HPPS		=		AMateria.hpp	Cure.hpp	IMateriaSource.hpp	MateriaSource.hpp	\
-					Character.hpp	ICharacter.hpp	Ice.hpp
+HPPS		=		# your h++ file or nothing, works equally
 
-SRCS		= 		AMateria.cpp	Character.cpp	Cure.cpp	\
-					Ice.cpp	MateriaSource.cpp main.cpp
+SRCS		= 		# your c++ file
 				
 #---------------------COMPILER---------------------#
 
-NAME		=		IceAge
+# chose a NAME for your program
+
+NAME		=		
 
 CPP 		= 		@ clang++
 
@@ -115,8 +114,10 @@ debug:		$(OBJS_DEBUG)
 
 re-debug:	fclean debug
 
+
 leaks:		
 			@ echo $(LEAKS_COLOR) "[... Finding leaks in $(NAME) ⛳️ ...]" 
 			@ leaks --atExit -- ./$(NAME)
+
 
 .PHONY: 	all clean fclean re norme  debug re-debug leaks

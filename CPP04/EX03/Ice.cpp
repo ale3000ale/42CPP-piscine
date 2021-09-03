@@ -6,7 +6,7 @@
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 17:04:18 by amarcell          #+#    #+#             */
-/*   Updated: 2021/09/01 17:06:14 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/09/03 14:54:29 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Ice::Ice(): AMateria("ice")
 {
 }
 
-Ice::Ice( const Ice & src ): AMateria(src.m_type)
+Ice::Ice( const Ice & cpy ): AMateria(cpy.m_type)
 {
 }
 
@@ -24,9 +24,9 @@ Ice::~Ice()
 {
 }
 
-Ice &	Ice::operator=(Ice const & rhs)
+Ice &	Ice::operator=(Ice const & cpy)
 {
-	(void)rhs;
+	(void)cpy;
 	return *this;
 }
 

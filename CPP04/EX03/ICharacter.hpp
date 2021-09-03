@@ -6,7 +6,7 @@
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 16:54:57 by amarcell          #+#    #+#             */
-/*   Updated: 2021/09/01 17:30:16 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/09/02 18:20:07 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 # include <iostream>
 # include <string>
-
-class AMateria;
+# include "AMateria.hpp"
 
 class ICharacter
 {

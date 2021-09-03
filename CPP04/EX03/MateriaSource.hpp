@@ -6,7 +6,7 @@
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 19:09:30 by amarcell          #+#    #+#             */
-/*   Updated: 2021/09/01 19:13:32 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/09/02 16:14:46 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define MATERIASOURCE_H__
 
 # include "IMateriaSource.hpp"
+# include "AMateria.hpp"
+
+# define MAX 10
 
 class MateriaSource: public IMateriaSource
 {
@@ -21,16 +24,15 @@ class MateriaSource: public IMateriaSource
 	public:
 
 		MateriaSource();
-		MateriaSource( MateriaSource const & src );
+		MateriaSource(MateriaSource const &cpy);
 		~MateriaSource();
 
-		MateriaSource &		operator=( MateriaSource const & rhs );
+		MateriaSource &operator=(MateriaSource const &cpy);
 		void	learnMateria(AMateria *m);
-		AMateria*	createMateria(std::string const & type);
+		AMateria*	createMateria(std::string const &type);
 
 	private:
-		AMateria	**m_source;
-
+		AMateria	**sources;
 };
 
 

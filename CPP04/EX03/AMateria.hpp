@@ -6,7 +6,7 @@
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 14:52:07 by amarcell          #+#    #+#             */
-/*   Updated: 2021/09/03 14:47:16 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/09/03 16:23:18 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define AMATERIA_H__
 
 # include <iostream>
-# include <string>
 
 class ICharacter;
 

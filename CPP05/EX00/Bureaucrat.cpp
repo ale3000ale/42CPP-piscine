@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 18:46:44 by amarcell          #+#    #+#             */
-/*   Updated: 2021/09/04 17:40:58 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/09/05 21:37:58 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,10 @@ Bureaucrat &Bureaucrat::operator=( Bureaucrat const & rhs )
 
 const char *	Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade cannot advance");
+	return ("Grade too high");
 }
 
 const char *	Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade cannot drop");
+	return ("Grade too low");
 }

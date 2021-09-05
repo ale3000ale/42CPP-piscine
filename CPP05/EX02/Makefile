@@ -58,7 +58,8 @@ OBJS_DEBUG_DIR	=	objs_debug
 
 HPPS		=		 				# your h++ file or nothing, works equally
 
-SRCS		= 		Bureaucrat.cpp main.cpp Form.cpp# your c++ file
+SRCS		=		Bureaucrat.cpp	PresidentialPardonForm.cpp ShrubberyCreationForm.cpp \
+					Form.cpp	RobotomyRequestForm.cpp	main.cpp# your c++ file
 				
 #---------------------COMPILER---------------------#
 

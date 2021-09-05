@@ -22,12 +22,13 @@ class Form
 		Form( Form const & src );
 		~Form();
 
-		Form &		operator=( Form const & rhs );
-		void		beSigned(Bureaucrat &b);
-		int			getGradeExe(void)	const;
-		int			getGradeSig(void)	const;
-		std::string	getName(void)	const;
-		bool		getSign(void)	const;
+		Form &			operator=( Form const & rhs );
+		void			beSigned(Bureaucrat &b);
+		int				getGradeExe(void)	const;
+		int				getGradeSig(void)	const;
+		std::string		getName(void)	const;
+		bool			getSign(void)	const;
+		virtual void	execute(Bureaucrat const & executor) const;
 		
 	class GradeTooHighException: public std::exception
 	{ 
@@ -35,6 +36,11 @@ class Form
 	};
 	
 	class GradeTooLowException: public std::exception
+	{ 
+		const char *what() const throw();
+	};
+
+	class NoSignException: public std::exception
 	{ 
 		const char *what() const throw();
 	};

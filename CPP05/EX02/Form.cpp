@@ -68,6 +68,18 @@ std::ostream &			operator<<( std::ostream & o, Form const & i )
 			
 	}
 
+	void		Form::execute(Bureaucrat const & executor) const
+	{
+		if (!Form::getSign())
+		{
+			throw Form::NoSignException();
+		}
+		if (executor.getGrade() > grade_exe)
+		{
+			throw Form::GradeTooLowException();
+		}
+		
+	}
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
@@ -100,4 +112,9 @@ const char *	Form::GradeTooHighException::what() const throw()
 const char *	Form::GradeTooLowException::what() const throw()
 {
 	return ("Grade too Low");
+}
+
+const char *	Form::NoSignException::what() const throw()
+{
+	return ("Not signed");
 }

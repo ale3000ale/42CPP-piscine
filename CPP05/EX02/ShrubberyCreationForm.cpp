@@ -58,8 +58,6 @@ void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		{
 			std::cout << "Error: system function fail\n";
 		}
-	
-	
 }
 
 /*

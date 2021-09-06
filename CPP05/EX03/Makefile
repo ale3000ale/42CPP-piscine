@@ -6,7 +6,7 @@
 #    By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 15:26:08 by amarcell          #+#    #+#              #
-#    Updated: 2021/09/06 17:36:15 by amarcell         ###   ########.fr        #
+#    Updated: 2021/09/06 18:11:12 by amarcell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ OBJS_DEBUG_DIR	=	objs_debug
 HPPS		=		 				# your h++ file or nothing, works equally
 
 SRCS		=		Bureaucrat.cpp	PresidentialPardonForm.cpp ShrubberyCreationForm.cpp \
-					Form.cpp	RobotomyRequestForm.cpp	main.cpp# your c++ file
+					Form.cpp	RobotomyRequestForm.cpp	main.cpp Intern.cpp# your c++ file
 
 EXTRA_CLEAN	=		Shrubbery_shrubbery # extra file do u want delete					
 				

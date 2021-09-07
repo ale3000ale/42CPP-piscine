@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cheker.hpp                                         :+:      :+:    :+:   */
+/*   imports.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 12:09:10 by amarcell          #+#    #+#             */
-/*   Updated: 2021/09/07 16:57:41 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/09/08 01:57:48 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHEKER_H__
-#define CHEKER_H__
-
-#define INT		0
-#define FLOAT	1
-#define DOUBLE	2
-#define CHAR	3
+#ifndef CHECKER_H__
+#define CHECKER_H__
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
-int cheker(std::string const s);
-
+bool	checker(std::string const s);
+bool	ck_char(std::string const & s);
+bool	ck_int(std::string const & s);
+bool	ck_float(std::string const & s);
+bool	ck_double(std::string const & s);
 
 #endif

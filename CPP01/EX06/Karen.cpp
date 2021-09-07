@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 16:50:45 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/22 15:59:19 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/09/07 16:42:39 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

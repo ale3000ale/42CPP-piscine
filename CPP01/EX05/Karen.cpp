@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 16:50:45 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/22 15:59:00 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/09/07 16:33:33 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	Karen::warning()
 void Karen::complain( std::string level )
 {
 	std::string	levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	typedef	void	(Karen::*Actions)(void);
-	Actions	funcs[] = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
+	typedef	void	(Karen::*Func)(void);
+	Func	funcs[] = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
 	for (int i = 0; i < 4; i++)
 	{
 		if (level == levels[i])

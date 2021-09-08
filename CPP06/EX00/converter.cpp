@@ -3,32 +3,100 @@
 /*                                                        :::      ::::::::   */
 /*   converter.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 01:41:28 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/09/08 01:57:46 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/09/08 18:01:18 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "imports.hpp"
 
+static bool	ck_char(std::string const s)
+{
+	if (s.length() != 1 || isdigit(s[0]))
+		return (false);
+	return (true);
+}
 
+static bool	ck_int(std::string const s)
+{
+	if (s.find('-') != std::string::npos && (s.find('-') != s.rfind('-')
+		|| s.find('-') != 0))
+		return (false);
 
-void	to_char(std::string const s)
+	for (int i = 1; i < (int)s.length(); i++)
+		if (!isdigit(s[i]))
+			return (false);
+	
+	return (true);
+}
+
+static bool	ck_float(std::string const s)
+{
+		return (true);
+	if (s.find('.') == std::string::npos
+		|| s.find('.') == 0 || s.find('.') == s.length() - 1
+		|| s.find('.') != s.rfind('.')
+		|| s.find('f') != s.length() - 1)
+		return (false);
+	if (s.find('-') != std::string::npos && (s.find('-') != s.rfind('-')
+		|| s.find('-') != 0))
+		return (false);
+
+	for (int i = 1; i < s.length(); i++)
+		if (!isdigit(s[i]) && s[i] != '.')
+			return (false);
+
+	return (true);
+}
+
+static bool	ck_double(std::string const s)
+{
+	if (s == "-inf" || s == "+inf" || s == "nan")
+		return (true);
+	if (s.find('.') == std::string::npos
+		|| s.find('.') == 0 || s.find('.') == s.length() - 1
+		|| s.find('.') != s.rfind('.'))
+		return (false);
+	if (s.find('-') != std::string::npos && (s.find('-') != s.rfind('-')
+		|| s.find('-') != 0))
+		return (false);
+
+	for (int i = 1; i < (int)s.length(); i++)
+		if (!isdigit(s[i]) && s[i] != '.')
+			return (false);
+
+	return (true);
+}
+
+static int	identifire(std::string const s)
+{
+	typedef	bool	(*Cheker)(std::string const );
+	Cheker ck[] = {&ck_char, &ck_int,  &ck_float, &ck_double};
+	for (int i  = 0;i < 4 ; i++)
+		if (ck[i](s))
+			return (i);
+	return (-1);
+}
+
+static bool	to_char(std::string const s)
 {
 	char	c = s[0];
-
+	std::cout << "|------CHAR-----|" << std::endl;
 	std::cout << "char: '" << c << "'" << std::endl;
 	std::cout << "int: " << static_cast<int>(c) << std::endl;
 	std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
 	std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
+	return true;
 }
 
-bool	to_int(std::string const s)
+static bool	to_int(std::string const s)
 {
 	long 		l = strtol(s.data(), NULL, 10);
 	int			i;
 
+	std::cout << "|------INT-----|" << std::endl;
 	if (l > INT_MAX || l < INT_MIN)
 	{
 		std::cout << "Error: int value out of range" << std::endl;
@@ -47,11 +115,12 @@ bool	to_int(std::string const s)
 	return (true);
 }
 
-bool	to_float(std::string const s)
+static bool	to_float(std::string const s)
 {
 	double	d = strtod(s.data(), NULL);
 	float	f;
 
+	std::cout << "|------FLOAT-----|" << std::endl;
 	(void)d;
 	if (errno == ERANGE)
 	{
@@ -74,10 +143,11 @@ bool	to_float(std::string const s)
 	return (true);
 }
 
-bool	to_double(std::string const s)
+static bool	to_double(std::string const s)
 {
 	double	d = strtod(s.data(), NULL);
 
+	std::cout << "|------DOUBLE-----|" << std::endl;
 	if (errno == ERANGE)
 	{
 		std::cout << "Error: double value out of range" << std::endl;
@@ -98,37 +168,12 @@ bool	to_double(std::string const s)
 	return (true);
 }
 
-bool	converter(std::string const s)
+void	converter(std::string const s)
 {
-	if (ck_char(s))
-	{
-		to_char(s);
-		return (true);
-	}
-	else if (ck_int(s))
-		return (to_int(s));
-	else if (ck_float(s))
-	{
-		if (s == "nanf" || s == "+inff" || s == "-inff")
-		{
-			std::cout << "char: impossible" << std::endl;
-			std::cout << "int: impossible" << std::endl;
-			std::cout << "float: " << s << std::endl;
-			std::cout << "double: " << s.substr(0, s.length() - 1) << std::endl;
-			return (true);
-		}
-		return (to_float(s));
-	}
-	else
-	{
-		if (s == "nan" || s == "+inf" || s == "-inf")
-		{
-			std::cout << "char: impossible" << std::endl;
-			std::cout << "int: impossible" << std::endl;
-			std::cout << "float: " << s << "f" << std::endl;
-			std::cout << "double: " << s << std::endl;
-			return (true);
-		}
-		return (to_double(s));
-	}
+	typedef	bool	(*Transform)(std::string const );
+	Transform tr[] = {&to_char, &to_int,  &to_float, &to_double};
+	int i = identifire(s);
+	if (i != -1)
+		if (!tr[i](s))
+			std::cout <<"WARNING: non-convertible string\n";
 }

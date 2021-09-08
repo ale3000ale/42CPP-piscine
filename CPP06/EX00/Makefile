@@ -6,7 +6,7 @@
 #    By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 15:26:08 by amarcell          #+#    #+#              #
-#    Updated: 2021/09/06 19:09:13 by amarcell         ###   ########.fr        #
+#    Updated: 2021/09/08 17:51:58 by amarcell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ OBJS_DEBUG_DIR	=	objs_debug
 
 HPPS		=		 				# your h++ file or nothing, works equally
 
-SRCS		=		main.cpp# your c++ file
+SRCS		=		main.cpp converter.cpp# your c++ file
 
 EXTRA_CLEAN	=		 # extra file do u want delete					
 				

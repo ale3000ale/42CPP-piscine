@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   converter.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 01:41:28 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/09/08 18:01:18 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/09/08 21:14:20 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static bool	ck_int(std::string const s)
 
 static bool	ck_float(std::string const s)
 {
+	if (s == "-inff" || s == "+inff" || s == "nanf")
 		return (true);
 	if (s.find('.') == std::string::npos
 		|| s.find('.') == 0 || s.find('.') == s.length() - 1
@@ -44,7 +45,7 @@ static bool	ck_float(std::string const s)
 		|| s.find('-') != 0))
 		return (false);
 
-	for (int i = 1; i < s.length(); i++)
+	for (int i = 1; i < (int)s.length(); i++)
 		if (!isdigit(s[i]) && s[i] != '.')
 			return (false);
 
@@ -174,6 +175,11 @@ void	converter(std::string const s)
 	Transform tr[] = {&to_char, &to_int,  &to_float, &to_double};
 	int i = identifire(s);
 	if (i != -1)
+	{
 		if (!tr[i](s))
 			std::cout <<"WARNING: non-convertible string\n";
+	}
+	else
+		std::cout <<"WARNING: Wrong string\n";
+	
 }

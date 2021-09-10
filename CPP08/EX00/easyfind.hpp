@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 17:59:27 by amarcell          #+#    #+#             */
-/*   Updated: 2021/09/10 18:15:30 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/09/11 01:23:09 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,12 @@
 #define EASYFIND_H__ 
 
 #include <iostream>
+#include <iterator>
 
-template<typename Container>
-int easyfind(Container const &container, int elem)
+template<typename T>
+typename T::iterator easyfind(T &container, int elem)
 {
-	int i = 0;
-	for (int c : container) 
-	{
-		if (elem == c)
-			return(i);
-		i++;
-	}
-	return (-1);
+	return std::find(container.begin(), container.end(), elem);
 }
 
 #endif

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 01:31:48 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/09/11 01:36:45 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/09/11 17:39:23 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "span.hpp"
 #include <algorithm>
 
 /*
@@ -54,9 +54,11 @@ std::ostream &			operator<<( std::ostream & o, Span const & i )
 
 	for (std::vector<int>::iterator it = list.begin(); it != list.end(); it++)
 	{
+		std::cout << "[";
 		std::cout << *it;
 		if (it + 1 != list.end())
-			std::cout << " ; ";
+			std::cout << " | ";
+		std::cout << "]";
 	}
 	return o;
 }
@@ -68,7 +70,7 @@ std::ostream &			operator<<( std::ostream & o, Span const & i )
 void	Span::addNumber(int const nb)
 {
 	if (vect.size() >= size)
-		throw SizeMaxReachedException();
+		throw OneNumberException();
 	vect.push_back(nb);
 }
 
@@ -77,7 +79,7 @@ unsigned int	Span::shortestSpan(void) const
 	if (!vect.size())
 		throw NoNumberException();
 	else if (vect.size() == 1)
-		throw LonelyNumberException();
+		throw OneNumberException();
 	std::vector<int>	list(vect);
 	unsigned int		span = longestSpan();
 
@@ -95,7 +97,7 @@ unsigned int	Span::longestSpan(void) const
 	if (!vect.size())
 		throw NoNumberException();
 	else if (vect.size() == 1)
-		throw LonelyNumberException();
+		throw OneNumberException();
 	std::vector<int>	list(vect);
 
 	std::sort(list.begin(), list.end());

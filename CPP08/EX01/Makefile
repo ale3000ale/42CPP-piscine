@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+         #
+#    By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 15:26:08 by amarcell          #+#    #+#              #
-#    Updated: 2021/09/11 01:30:36 by alexmarcell      ###   ########.fr        #
+#    Updated: 2021/09/11 17:38:41 by amarcell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ EXTRA_CLEAN	=		 # extra file do u want delete
 
 # chose a NAME for your program
 
-NAME		=		Array
+NAME		=		Span
 
 CPP 		= 		@ clang++
 

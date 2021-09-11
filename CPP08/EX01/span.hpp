@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 01:31:15 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/09/11 01:35:54 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/09/11 17:32:57 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,51 +32,29 @@ class Span
 		~Span();
 		Span &		operator=( Span const & rhs );
 
-		void	addNumber(int const nb);
-		unsigned int	shortestSpan(void) const;
-		unsigned int	longestSpan(void) const;
+		void				addNumber(int const nb);
+		unsigned int		shortestSpan(void) const;
+		unsigned int		longestSpan(void) const;
 		std::vector<int>	getList(void) const;
 		
 		
-		template<typename InputIterator>
-		void	addRange(InputIterator first, InputIterator last);
 		
-		class SizeMaxReachedException: public std::exception
-		{
-			const char * what() const throw()
-			{
-				return ("Error: max size has been reached");
-			}
-		};
 		class NoNumberException: public std::exception
 		{
 			const char * what() const throw()
 			{
-				return ("Error: empty array");
+				return ("Error: Empty array");
 			}
 		};
-		class LonelyNumberException: public std::exception
+		class OneNumberException: public std::exception
 		{
 			const char * what() const throw()
 			{
-				return ("Error: number in array");
+				return ("Error: One number in array");
 			}
 		};
 
 };
-
-template<typename InputIterator>
-void	Span::addRange(InputIterator first, InputIterator last)
-{
-	while (first != last)
-	{
-		if (vect.size() >= size)
-			throw SizeMaxReachedException();
-		vect.push_back(*first);
-		first++;
-	}
-	// Invalid arguments cause undefined behavior
-}
 
 std::ostream &			operator<<( std::ostream & o, Span const & i );
 

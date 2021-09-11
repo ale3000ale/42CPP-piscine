@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 18:15:34 by amarcell          #+#    #+#             */
-/*   Updated: 2021/09/11 01:40:18 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/09/11 17:49:53 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "span.hpp"
 #include <ctime>
 #include <cstdlib>
-
-#define MAX_VAL 50000
 
 int main(void)
 {
@@ -30,58 +28,46 @@ int main(void)
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}
-	std::cout << std::endl << "Massive tests with random values & SIZE = " << MAX_VAL  << std::endl;
+	std::cout << std::endl << "Massive tests random SIZE= 50000" << std::endl;
 	{	// Massive tests
-		Span	sp(MAX_VAL);
+		Span	sp(5000);
 		srand(time(NULL));
 
-		for (size_t i = 0; i < MAX_VAL; i++)
+		for (size_t i = 0; i < 5000; i++)
 		{
-			sp.addNumber(rand());
+			sp.addNumber(rand() );
 		}
 		std::cout << "shortest span: " << sp.shortestSpan() << std::endl; 
 		std::cout << "longest span: " << sp.longestSpan() << std::endl;
 	}
-	std::cout << std::endl << "Range insertion tests from an int array"  << std::endl;
-	{	// Range insertion tests
-		Span	sp(10);
-		int		tab[10] = {2147483647, -2147483648, 0, 999, -666, 1, 42, -21, 17, -9999};
 
-		sp.addRange(tab, tab + 10);
-		std::cout << sp << std::endl;
-		std::cout << "shortest span: " << sp.shortestSpan() << std::endl; 
-		std::cout << "longest span: " << sp.longestSpan() << std::endl;
+	Span	sp(1);
 
-	}
-	std::cout << C_YELLOW << std::endl << "Exception tests" << C_RESET << std::endl;
+	try
 	{
-		Span	sp(1);
-
-		try
-		{
-			sp.longestSpan();
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-		sp.addNumber(42);
-		try
-		{
-			sp.shortestSpan();
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-		try
-		{
-			sp.addNumber(21);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}	
+		sp.longestSpan();
 	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	sp.addNumber(456);
+	try
+	{
+		sp.shortestSpan();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		sp.addNumber(3541);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}	
+
 	return (0);
 }

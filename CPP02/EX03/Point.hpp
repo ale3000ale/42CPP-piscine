@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 16:25:07 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/28 18:18:30 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/09/14 11:53:36 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ public:
 };
 
 bool bsp( Point const a, Point const b, Point const c, Point const point);
-
+std::ostream &operator<<(std::ostream &out, Fixed const &i);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
+/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 16:45:38 by alexmarcell       #+#    #+#             */
-/*   Updated: 2021/08/28 18:18:49 by alexmarcell      ###   ########.fr       */
+/*   Updated: 2021/09/14 11:54:45 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,10 @@
 	Fixed Point::getY() const
 	{
 		return y;
+	}
+
+	std::ostream &operator<<(std::ostream &out, Point const &i)
+	{
+		out << "X: " << i.getX() << " Y: " << i.getY() << std::endl;
+		return out;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 13:35:03 by amarcell          #+#    #+#             */
-/*   Updated: 2021/09/03 16:10:00 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/10/05 17:38:43 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ class Dog : public Animal
 public:
 	Dog();
 	~Dog();
-	
+	Dog(Dog &c);
+
+	Dog &operator=(const Dog &cpy);
 	void makeSound(void) const;
 };
 

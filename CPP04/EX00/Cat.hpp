@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alexmarcelli <alexmarcelli@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 13:45:16 by amarcell          #+#    #+#             */
-/*   Updated: 2021/08/31 14:01:31 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/10/05 17:28:21 by alexmarcell      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ private:
 	
 public:
 	Cat();
+	Cat(Cat &c);
 	~Cat();
 
+	Cat &operator=(const Cat &cpy);
 	void makeSound(void) const;
 };
 

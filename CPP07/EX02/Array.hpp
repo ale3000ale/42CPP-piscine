@@ -6,7 +6,7 @@
 /*   By: amarcell <amarcell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:53:57 by amarcell          #+#    #+#             */
-/*   Updated: 2021/09/10 15:19:02 by amarcell         ###   ########.fr       */
+/*   Updated: 2021/10/19 15:07:02 by amarcell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Array
 
 		Array(): array(new T[0]), _n(0){}
 		Array(unsigned int n): array(new T[n]), _n(n){}
-		Array( Array const & src ): array(new T[src.getLen()]), _n(src.getLen())
+		Array( Array const & src ): array(new T[src.size()]), _n(src.size())
 		{
 			for(unsigned int i = 0; i < _n; i++)
 				array[i] = src.getArray()[i];
@@ -36,17 +36,41 @@ class Array
 			delete[] array;
 		}
 
-		Array &		operator=( Array const & src )
+		Array 		&operator=( Array const & src )
 		{
 			delete[] array;
-			array = new T[src.getLen()];
-			_n = src.getLen();
+			array = new T[src.size()];
+			_n = src.size();
 			for(unsigned int i = 0; i < _n; i++)
 				array[i] = src.getArray()[i];
 		}
-		unsigned int	getLen() const {return _n;}
+
+		T 			&operator[](unsigned int i) const
+		{
+			if (i >= 0 && i < _n)
+				return array[i];
+			else
+				throw OutOfBounds();
+			
+		}
+
+		unsigned int	size() const {return _n;}
 		T*				getArray() const {return array;}
-		void			setArray(unsigned int i, T e) {array[i] = e;}
+		void			setArray(unsigned int i, T e) 
+		{
+			if (i >= 0 && i < _n)
+				array[i] = e;
+			else
+				throw OutOfBounds();
+		}
+
+		class OutOfBounds: public std::exception
+	{ 
+		const char *what() const throw()
+		{
+			return ("ERROR: Access out of bounds");
+		}
+	};
 
 };
 
@@ -54,8 +78,8 @@ template<typename T>
 std::ostream &			operator<<( std::ostream & o, Array<T> const & a )
 {
 	o << "|";
-	for(unsigned int i = 0; i < a.getLen(); i++)
-		o << a.getArray()[i] << "|";
+	for(unsigned int i = 0; i < a.size(); i++)
+		o << a[i] << "|";
 	return o;
 }
 
